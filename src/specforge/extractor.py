@@ -61,6 +61,10 @@ class CustomFeatureExtractor:
 
         return {"input_values": spec}
 
+    def to(self, device):
+        self.transform = self.transform.to(device)
+        return self
+
     @classmethod
     def from_sample_rate(
         cls,
